@@ -13,7 +13,7 @@
 </a>
 </div>
 
-<div class="tagline">Digital Barter for a sustainable community</div>
+<div class="tagline">Digital Exchange for a sustainable community</div>
 
 <div class="signup">
     <form action="Profilehtml.html">
@@ -36,5 +36,14 @@
     <p class="help">help</p>
 </div>
 
+<div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}  
+</div>
 
 </html>
