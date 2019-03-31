@@ -1,165 +1,34 @@
-
+{% extends 'blog/base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-
-<html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/profilecss.css' %}">
+<html>
+    <head>
+        <title>Django Girls blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="//https://fonts.google.com/specimen/Raleway?selection.family=Raleway" rel="stylesheet" type="text/css">
-
-    
-    <title>DIY SDI: Digital Swap</title>
-</head>
-<body class="w3-theme-l5">
-
-<!-- Navbar -->
-<div class="wholenav_top"> <!-- w3-top -->
-    <div class="wholenav_bar navigationbar_color w3-left-align w3-large">
-     <a class="wholenav_bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large navigationbar_color" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-     <a href="#" class="wholenav_bar-item w3-button w3-padding-large navigationbar_logoarea"><i class="fa fa-home w3-margin-right"></i>Logo</a>
-     <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-     <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-     <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-     <div class="w3-dropdown-hover w3-hide-small">
-       <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small red_notific">1</span></button>
-       <div class="w3-dropdown-content w3-card-4 wholenav_bar-block" style="width:300px">
-         <a href="#" class="wholenav_bar-item w3-button">New Swap request</a>
-         <a href="#" class="wholenav_bar-item w3-button">John Doe is now following you</a>
-         <a href="#" class="wholenav_bar-item w3-button">Jane liked your Swap</a>
-       </div>
-     </div>
-     <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-       <img src="{% static 'Images/Images/avatar2.png' %}" class="navbar_avatarcircle" style="height:23px;width:23px" alt="Avatar">
-     </a>
-    </div>
-   </div>
-   
-   <!-- Navbar on small screens -->
-   <div id="navDemo" class="wholenav_bar-block navigationbar_color w3-hide w3-hide-large w3-hide-medium w3-large">
-     <a href="#" class="wholenav_bar-item w3-button w3-padding-large">Link 1</a>
-     <a href="#" class="wholenav_bar-item w3-button w3-padding-large">Link 2</a>
-     <a href="#" class="wholenav_bar-item w3-button w3-padding-large">Link 3</a>
-     <a href="#" class="wholenav_bar-item w3-button w3-padding-large">My Profile</a>
-   </div>
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
-        <!-- The Grid -->
-        <div class="w3-row">
-          <!-- Left Column -->
-          <div class="site-col m3">
-            <!-- Profile -->
-            <div class="w3-card w3-round w3-white">
-              <div class="w3-container">
-               <h4 class="w3-center">My Profile</h4>
-               <p class="w3-center"><img src="/Images/avatar2.png" class="navbar_avatarcircle" style="height:106px;width:106px" alt="Avatar"></p>
-               <hr>
-               <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Agriculture, Bio Foods, Foodie</p>
-               <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>Düsseldorf Germany</p>
-               <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> Total Swaps: 621</p>
-              </div>
-            </div>
-            <br>
-      
-            <!-- Accordion -->
-            <div class="w3-card w3-round">
-              <div class="w3-white">
-                <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Swaps</button>
-                <div id="Demo1" class="w3-hide w3-container">
-                  <p>Some text..</p>
-                </div>
-                <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Follow</button>
-                <div id="Demo2" class="w3-hide w3-container">
-                  <p>Some other text..</p>
-                </div>
-                <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> About</button>
-                <div id="Demo3" class="w3-hide w3-container">
-               <div class="w3-row-padding">
-               <br>
-                 <div class="w3-half">
-                   <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
-                 </div>
-                 <div class="w3-half">
-                   <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-                 </div>
-                 <div class="w3-half">
-                   <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
-                 </div>
-                 <div class="w3-half">
-                   <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-                 </div>
-                 <div class="w3-half">
-                   <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-                 </div>
-                 <div class="w3-half">
-                   <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
-                 </div>
-               </div>
-                </div>
-              </div>
-            </div>
-            <br>
+        <link rel="stylesheet" href="{% static '/Users/sabinaschmitz/PycharmProjects/djangogirls/blog/static/css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-      
-      <!-- Alert Box -->
-            <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-              <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-                <i class="fa fa-remove"></i>
-              </span>
-            </div>
-      
-          <!-- End Left Column -->
-          </div>
-      
-          <!-- Middle Column -->
-          <div class="site-col m7">
-      
-            <div class="w3-row-padding">
-              <div class="site-col m12">
-                <div class="w3-card w3-round w3-white">
-                  <div class="w3-container w3-padding">
-                    <p contenteditable="true" class="w3-border w3-padding">Status: Swap</p>
-                    <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-      <div>
-        {% block content %}
-            {% for post in posts %}
-            <div class="post w3-container w3-card w3-white w3-round w3-margin"><br>
-              <img src="Images/Asset 3mdpi.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-              <p>{{ post.author }}</p><br>
-              <h4>{{ post.title }}</h4><br>
-              <hr class="w3-clear">
-              <p>{{ post.text|linebreaksbr }}</p>
-                
-              <div class="w3-row w3-opacity">
-                    <button class="diy-green">Accept</button>
-                    <button class="w3-red">Decline</button>
-              </div>
-              <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
-              <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
-            </div>
-            {% endfor %}
-        {% endblock %}  
-        </div>
-      
-<div>
-{% for post in posts %}
-    <div class="post">
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}  
-</div>
-</body>
 
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    {% block content %}
+                      {% for post in posts %}
+                        <div class="post">
+                          <div class="date">
+                              {{ post.published_date }}
+                          </div>
+                          <h2><a href="">{{ post.title }}</a></h2>
+                          <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                      {% endfor %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

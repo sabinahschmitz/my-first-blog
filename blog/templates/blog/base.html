@@ -1,49 +1,33 @@
+
 <!DOCTYPE html>
 <meta charset="UTF-8">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//https://fonts.google.com/specimen/Raleway?selection.family=Raleway" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-    
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-</head>
-<body class="w3-theme-l5">
 
-<!-- Navbar -->
-<div class="wholenav_top"> <!-- w3-top -->
- <div class="wholenav_bar navigationbar_color w3-left-align w3-large">
-  <a class="wholenav_bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large navigationbar_color" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="wholenav_bar-item w3-button w3-padding-large navigationbar_logoarea"><i class="fa fa-home w3-margin-right"></i>Logo</a>
-  <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-  <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-  <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-  <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small red_notific">1</span></button>
-    <div class="w3-dropdown-content w3-card-4 wholenav_bar-block" style="width:300px">
-      <a href="#" class="wholenav_bar-item w3-button">New Barter request</a>
-      <a href="#" class="wholenav_bar-item w3-button">John Doe is now following you</a>
-      <a href="#" class="wholenav_bar-item w3-button">Jane liked your barter</a>
-    </div>
-  </div>
-  <a href="#" class="wholenav_bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-    <img src="Images/avatar2.png" class="navbar_avatarcircle" style="height:23px;width:23px" alt="Avatar">
-  </a>
- </div>
-</div>
-
-<!-- Navbar on small screens -->
-<div id="navDemo" class="wholenav_bar-block navigationbar_color w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="#" class="wholenav_bar-item w3-button w3-padding-large">Link 1</a>
-  <a href="#" class="wholenav_bar-item w3-button w3-padding-large">Link 2</a>
-  <a href="#" class="wholenav_bar-item w3-button w3-padding-large">Link 3</a>
-  <a href="#" class="wholenav_bar-item w3-button w3-padding-large">My Profile</a>
-</div>
-
-<div>
-        {% block content %}
-        {% endblock %}
-</div>
-</body>
+        
+        {% load static %}
+        <html>
+            <head>
+                <title>Django Girls blog</title>
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+                <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+                <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            </head>
+            <body>
+                <div class="page-header">
+                    <h1><a href="/">Django Girls Blog</a></h1>
+                </div>
+        
+                <div class="content container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% block content %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
